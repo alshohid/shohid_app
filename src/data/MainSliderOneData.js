@@ -18,7 +18,7 @@ const mainSliderOneData = [
             { id: 3, icon: faTwitter, link: "https://twitter.com", name: "Twitter" },
             { id: 4, icon: faInstagram, link: "https://instagram.com", name: "Instagram" },
         ],
-        floatingText: "Tolak"
+        floatingText: "News Blog"
 
     },
     {
@@ -34,7 +34,7 @@ const mainSliderOneData = [
             { id: 3, icon: faTwitter, link: "https://twitter.com", name: "Twitter" },
             { id: 4, icon: faInstagram, link: "https://instagram.com", name: "Instagram" },
         ],
-        floatingText: "Tolak"
+        floatingText: "News Blog"
 
     },
     {
@@ -50,7 +50,7 @@ const mainSliderOneData = [
             { id: 3, icon: faTwitter, link: "https://twitter.com", name: "Twitter" },
             { id: 4, icon: faInstagram, link: "https://instagram.com", name: "Instagram" },
         ],
-        floatingText: "Tolak"
+        floatingText: "News Blog"
 
 
 

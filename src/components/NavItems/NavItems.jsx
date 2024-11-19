@@ -10,11 +10,11 @@ const NavItems = ({ item, onePage }) => {
     const current = pathname === href || subHref?.includes(pathname);
 
     return (
-        <li className={`${subNavItems && "dropdown"} ${current ? " current" : ""}`}>
+        <li className={`${subNavItems?.length > 0  && "dropdown"} ${current ? " current" : ""}`}>
             <Link href={href}>{name}</Link>
 
             {
-                subNavItems && <ul className="sub-menu">
+                subNavItems?.length > 0  && <ul className="sub-menu">
                     {subNavItems.map((subItem) => (
                         <li
 

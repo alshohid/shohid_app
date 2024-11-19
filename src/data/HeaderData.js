@@ -1,4 +1,4 @@
-import main_logo from "@/assets/images/logo-dark.png";
+import main_logo from "../../public/logo.svg";
 import logo_light from "@/assets/images/logo-light.png";
 import logo_rtl from "@/assets/images/logo-dark-rtl.png";
 import logo3 from "@/assets/images/logo-3.png";
@@ -91,76 +91,76 @@ const navItems = [
     name: "About",
     href: "/about",
   },
+  // {
+  //   id: 2,
+  //   name: "Pages",
+  //   href: "#",
+  //   subNavItems: [
+  //     {
+  //       id: 1,
+  //       name: "Our Project",
+  //       href: "/project",
+  //       dropdown: false,
+  //       subItems: [
+  //         {
+  //           id: 1,
+  //           name: "Project Page",
+  //           href: "/project",
+  //         },
+  //         {
+  //           id: 2,
+  //           name: "Project Carousel",
+  //           href: "/project-carousel",
+  //         },
+  //         {
+  //           id: 3,
+  //           name: "Project Details",
+  //           href: "/project-details",
+  //         },
+  //       ],
+  //     },
+  //     { id: 2, name: "Our Team", href: "/team" },
+  //     { id: 3, name: "Team Carousel", href: "/team-carousel" },
+  //     { id: 4, name: "Team Details", href: "/team-details" },
+  //     { id: 5, name: "Testimonial", href: "/reviews" },
+  //     { id: 6, name: "Testimonial Carousel", href: "/reviews-carousel" },
+  //     { id: 7, name: "Pricing Page", href: "/packages" },
+  //     { id: 8, name: "Pricing Carousel", href: "/packages-carousel" },
+  //     {
+  //       id: 9,
+  //       name: "Gallery",
+  //       href: "/gallery",
+  //       dropdown: false,
+  //       subItems: [
+  //         {
+  //           id: 1,
+  //           name: "Gallery Masonry",
+  //           href: "/gallery",
+  //         },
+  //         {
+  //           id: 2,
+  //           name: "Gallery Filter",
+  //           href: "/gallery-filter",
+  //         },
+  //         {
+  //           id: 3,
+  //           name: "Gallery Grid",
+  //           href: "/gallery-grid",
+  //         },
+  //         {
+  //           id: 4,
+  //           name: "Gallery Carousel",
+  //           href: "/gallery-carousel",
+  //         },
+  //       ],
+  //     },
+  //     { id: 10, name: "FAQs", href: "/faq" },
+  //     { id: 11, name: "Login", href: "/login" },
+  //     { id: 12, name: "404 Error", href: "/404" },
+  //   ],
+  // },
   {
     id: 2,
-    name: "Pages",
-    href: "#",
-    subNavItems: [
-      {
-        id: 1,
-        name: "Our Project",
-        href: "/project",
-        dropdown: false,
-        subItems: [
-          {
-            id: 1,
-            name: "Project Page",
-            href: "/project",
-          },
-          {
-            id: 2,
-            name: "Project Carousel",
-            href: "/project-carousel",
-          },
-          {
-            id: 3,
-            name: "Project Details",
-            href: "/project-details",
-          },
-        ],
-      },
-      { id: 2, name: "Our Team", href: "/team" },
-      { id: 3, name: "Team Carousel", href: "/team-carousel" },
-      { id: 4, name: "Team Details", href: "/team-details" },
-      { id: 5, name: "Testimonial", href: "/reviews" },
-      { id: 6, name: "Testimonial Carousel", href: "/reviews-carousel" },
-      { id: 7, name: "Pricing Page", href: "/packages" },
-      { id: 8, name: "Pricing Carousel", href: "/packages-carousel" },
-      {
-        id: 9,
-        name: "Gallery",
-        href: "/gallery",
-        dropdown: false,
-        subItems: [
-          {
-            id: 1,
-            name: "Gallery Masonry",
-            href: "/gallery",
-          },
-          {
-            id: 2,
-            name: "Gallery Filter",
-            href: "/gallery-filter",
-          },
-          {
-            id: 3,
-            name: "Gallery Grid",
-            href: "/gallery-grid",
-          },
-          {
-            id: 4,
-            name: "Gallery Carousel",
-            href: "/gallery-carousel",
-          },
-        ],
-      },
-      { id: 10, name: "FAQs", href: "/faq" },
-      { id: 11, name: "Login", href: "/login" },
-      { id: 12, name: "404 Error", href: "/404" },
-    ],
-  },
-  {
-    id: 3,
     name: "Services",
     href: "#",
     subNavItems: [
@@ -359,14 +359,14 @@ const headerData = {
     {
       id: 1,
       icon: faEnvelope,
-      content: "demo@example.com",
+      content: "alshohid1997@gmail.com",
       subHref: "mailto",
     },
     {
       id: 2,
       icon: faMapMarkerAlt,
-      content: "27, Dhaka London City, LOT",
-      href: "https://www.google.com/maps",
+      content: "Bonani,Road-25, block-a, Dhaka",
+      href: "https://maps.app.goo.gl/ExwYWY7VhXc3PR1G7",
     },
   ],
 
@@ -397,13 +397,13 @@ const headerData = {
     {
       id: 2,
       name: "Register",
-      href: "contact",
+      href: "registration",
     },
-    {
-      id: 3,
-      name: "Services",
-      href: "services",
-    },
+    // {
+    //   id: 3,
+    //   name: "Services",
+    //   href: "services",
+    // },
   ],
   headerFourCall: {
     href: "25844132",
@@ -424,7 +424,7 @@ const headerData = {
   singleNavItemsFive,
   singleNavItemsSix,
   singleNavItemsSeven,
-  topbarFiveData
+  topbarFiveData,
 };
 
 export default headerData;

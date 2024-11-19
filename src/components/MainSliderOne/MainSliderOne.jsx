@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import mainSliderOneData from "@/data/MainSliderOneData";
+// import mainSliderOneData from "@/data/MainSliderOneData";
 import Image from "next/image";
 import { Col, Container, Row } from "react-bootstrap";
 import Link from "next/link";
@@ -11,11 +11,14 @@ import CountUp from "react-countup";
 import VisibilityCountUp from "../VisibilityCountUp/VisibilityCountUp";
 import ScrollTriggerCount from "../ScrollTrigger/ScrollTriggerCount";
 import { Tilt } from "react-tilt";
+import  useSliderData  from "@/hooks/useSliderData";
+
 const TinySlider = dynamic(() => import("tiny-slider-react"), {
   ssr: false,
 });
 
 const MainSliderOne = () => {
+   const mainSliderOneData = useSliderData();
   const [mounted, setMounted] = useState(false);
 
   const [counterOn, setCounterOn] = useState(false);
@@ -77,11 +80,11 @@ const MainSliderOne = () => {
                   <Tilt
                     className='main-slider-one__shape tolak-tilt' options={defaultOptions}
                   >
-                    <Image src={shape} alt='tolak' />
+                    <Image src={shape} alt='news blog' />
                   </Tilt>
                   <div
                     className='main-slider-one__bg'
-                    style={{ backgroundImage: `url(${bg.src})` }}
+                    style={{ backgroundImage: `url(${bg})` }}
                   ></div>
                   <svg
                     className='main-slider-one__bg-svg'
@@ -200,7 +203,7 @@ const MainSliderOne = () => {
                           <div className='main-slider-one__bottom'>
                             <div className='main-slider-one__btn'>
                               <a
-                                href='services.html'
+                                href='/contact'
                                 className='tolak-btn tolak-btn--base'
                               >
                                 <b>Contact Now</b>
@@ -221,7 +224,7 @@ const MainSliderOne = () => {
                     </Row>
                   </Container>
 
-                  <div className='main-slider-one__floating-text'>Tolak</div>
+                  <div className='main-slider-one__floating-text' style={{fontSize:"120px"}} >News Blog</div>
                 </div>
               </div>
             )

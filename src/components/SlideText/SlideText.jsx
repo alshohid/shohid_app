@@ -20,7 +20,6 @@ const SlideText = ({ pageTitle }) => {
                     {
                         lists.map((l, i) => <li key={i}>{l}</li>)
                     }
-
                 </ul>
             </div>
         </section>

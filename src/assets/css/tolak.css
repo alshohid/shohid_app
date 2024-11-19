@@ -31,7 +31,7 @@
   --tolak-gray2-rgb: 193, 193, 193;
   --tolak-white: #fff;
   --tolak-white-rgb: 255, 255, 255;
-  --tolak-black: #051d1f;
+  --tolak-black: #202f31;
   --tolak-black-rgb: 5, 29, 31;
   --tolak-black2: #222222;
   --tolak-black2-rgb: 34, 34, 34;
@@ -582,6 +582,7 @@ h6 {
   padding-bottom: 0;
   border-radius: 0;
 }
+ 
 
 .bootstrap-select .dropdown-item.active,
 .bootstrap-select .dropdown-item:active {
@@ -914,7 +915,7 @@ h6 {
   padding: 3.5px;
 }
 
-.tolak-owl__carousel--basic-nav .tns-outer .tns-nav button {}
+
 
 .tolak-owl__carousel--basic-nav .tns-outer .tns-nav button:hover,
 .tolak-owl__carousel--basic-nav .tns-outer .tns-nav button.tns-nav-active {
@@ -4815,7 +4816,7 @@ h6 {
 
 @media (max-width: 767px) {
   .main-header__logo img {
-    max-width: 160px;
+    max-width: 140px;
   }
 }
 
@@ -13611,7 +13612,7 @@ body.megamenu-popup-active .mobile-nav__content {
   background-repeat: no-repeat;
   background-position: right center;
   background-size: cover;
-  background-image: url(../images/backgrounds/page-header-bg-1-1.png);
+  /* background-image: url(../images/backgrounds/page-header-bg-1-1.png); */
 }
 
 @media (max-width: 1199px) {
@@ -13627,7 +13628,7 @@ body.megamenu-popup-active .mobile-nav__content {
   height: 100%;
   right: 0;
   top: 0;
-  background-color: var(--tolak-black, #051d1f);
+  background-color: var(--tolak-black, white);
   opacity: 0.9;
 }
 
@@ -30044,4 +30045,84 @@ body.boxed-wrapper .main-slider-one__floating-text {
   top: 50%;
   z-index: 999;
   color: #fff;
+}
+
+
+
+/*rkk........................................*/
+
+/* Profile Container */
+.profile-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.profile-container img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 50px; /* Adjust to position dropdown below the image */
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  min-width: 150px;
+  border-radius: 8px;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+/* Staggered Animation */
+.profile-dropdown li {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition-delay: 0s;
+  padding: 8px 20px;
+  white-space: nowrap;
+}
+
+/* Hover State */
+.profile-container:hover .profile-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Staggered Effect for Each List Item */
+.profile-container:hover .profile-dropdown li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.profile-container:hover .profile-dropdown li:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.profile-container:hover .profile-dropdown li:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.profile-container:hover .profile-dropdown li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+
+.profile-dropdown li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.profile-dropdown li a:hover {
+  color: #007bff;
 }

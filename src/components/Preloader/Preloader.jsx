@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import bg from '@/assets/images/loader.png'
+import bg from '@/assets/images/logo.svg'
 
 const Preloader = () => {
     const [loading, setLoading] = useState(true);

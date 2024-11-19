@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE `news_list` MODIFY `img1` VARCHAR(300) NULL,
+    MODIFY `img2` VARCHAR(300) NULL,
+    MODIFY `img3` VARCHAR(300) NULL,
+    MODIFY `img4` VARCHAR(300) NULL;

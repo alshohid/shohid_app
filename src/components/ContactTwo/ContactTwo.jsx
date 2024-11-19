@@ -8,9 +8,7 @@ import emailjs from '@emailjs/browser';
 import toast from "react-hot-toast";
 const {
   bg,
-
   infoBoxs,
-
   infoText,
   infoTitle,
   socials,
@@ -34,20 +32,27 @@ const ContactTwo = ({ contact }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-      form.current,
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
-      .then((result) => {
-        console.log(result.text);
-        toast.success('Email sent successfully!');
-      }, (error) => {
-        console.log(error.text);
-        toast.error('Failed to send email.');
-      });
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast.success("Email sent successfully!");
+        },
+        (error) => {
+          console.error(error.text);
+          toast.error("Failed to send email.");
+        }
+      );
 
     e.target.reset();
   };
+
   return (
     <section className={`${contact === 'page' ? 'contact-two--contact-page' : ''} contact-two`} id="contact">
       <Container>

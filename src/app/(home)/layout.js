@@ -1,5 +1,5 @@
-'use client'
-
+"use client";
+import favicon from "@/assets/images/favicons/favicon.ico";
 import "@fontsource/rubik/latin.css";
 import "@fontsource/raleway/latin.css";
 import "@fontsource/red-hat-text/latin.css";
@@ -19,23 +19,58 @@ import ThemeProvider from "@/Provider/ThemeProvider";
 
 import "aos/dist/aos.css";
 
-import "@/assets/css/tolak-landing.css";
-
+import "@/assets/css/tolak.css";
+import "@/assets/css/tolak-dark.css";
 import { usePathname } from "next/navigation";
+
+import { useEffect, useState } from "react";
+
 export default function RootLayout({ children }) {
-  const pathname = usePathname()
+  const pathname = usePathname();
+  const [themeState, setThemeState] = useState("light");
+
+  useEffect(() => {
+    if (
+      pathname === "/home1-dark" ||
+      pathname === "/home2-dark" ||
+      pathname === "/home3-dark" ||
+      pathname === "/home4-dark"
+    ) {
+      setThemeState("dark");
+    } else {
+      setThemeState("light");
+    }
+  }, [pathname]);
 
   return (
-    <html lang='en'>
-
-
-      <body className={`custom-cursor ${pathname === "/home5" ? 'home5' : pathname === "/home5-one" ? 'home5' : pathname === "/home6" ? "home6" : pathname === "/home6-one" ? "home6" : pathname === "/home7" ? 'home7' : pathname === "/home7-one" ? 'home7' : pathname === "/home-boxed" ? "boxed-wrapper" : ''}`}>
-
+    <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      </head>
+      <body
+        className={`custom-cursor ${
+          pathname === "/home5"
+            ? "home5"
+            : pathname === "/home5-one"
+            ? "home5"
+            : pathname === "/home6"
+            ? "home6"
+            : pathname === "/home6-one"
+            ? "home6"
+            : pathname === "/home7"
+            ? "home7"
+            : pathname === "/home7-one"
+            ? "home7"
+            : pathname === "/home-boxed"
+            ? "boxed-wrapper"
+            : ""
+        } ${themeState}`}
+      >
+        {/* <ThemeSwitcherProvider themeMap={themes} defaultTheme={themeState}> */}
 
         <ThemeProvider>{children}</ThemeProvider>
+        {/* </ThemeSwitcherProvider> */}
       </body>
-
-
-    </html >
+    </html>
   );
 }

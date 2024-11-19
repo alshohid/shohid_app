@@ -1,29 +1,35 @@
-import DemosSection from "@/components/DemoSection/DemoSection";
-import FeatureOneDemo from "@/components/FeatureOneDemo/FeatureOneDemo";
-import FeatureTwoDemo from "@/components/FeatureTwoDemo/FeatureTwoDemo";
-import FooterDemo from "@/components/FooterDemo/FooterDemo";
-import HeroSection from "@/components/HeroSection/HeroSection";
+
+import FeatureOne from "@/components/FeatureOne/FeatureOne";
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header/Header";
+import Layout from "@/components/Layout/Layout";
+import MainSliderOne from "@/components/MainSliderOne/MainSliderOne";
+import PojectOne from "@/components/ProjectOne/ProjectOne";
+import ServiceOne from "@/components/ServiceOne/ServiceOne";
+import TopBar from "@/components/TopBar/TopBar";
 
 
 
 export const metadata = {
-  title: "Home || Tolak || NextJS Template For It Solution & Business",
-  description:
-    "Tolak is a modern NextJS Template for Business, It Solution, Corporate, Agency, Portfolio shops. The template perfectly fits Beauty Spa, Salon, and Wellness Treatments websites and businesses.",
+  title: "News blog",
+  description: "News blog website using next js and prisma",
 };
 
 
 const page = () => {
   return (
-
-    <div className="page-wrapper">
-      <HeroSection />
-      <FeatureTwoDemo />
-      <DemosSection />
-      <FeatureOneDemo />
-      <FooterDemo />
-    </div>
-
+    <Layout pageTitle="home">
+      <TopBar />
+      <Header />
+      <MainSliderOne />
+      <FeatureOne />
+      <div className="py-5" />
+      <div className="py-2" />
+      <ServiceOne />
+      <PojectOne />
+      <div className="py-5" />
+      <Footer />
+    </Layout>
   );
 }
 export default page;

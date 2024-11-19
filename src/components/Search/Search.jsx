@@ -1,12 +1,13 @@
 'use client'
 import { useRootContext } from "@/Provider/context";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const Search = () => {
-
+ const router= useRouter()
   const { openSearch, toggleSearch } = useRootContext();
   const [mounted, setMounted] = useState(false);
-
+  const [keywords,setKeywords]=useState("")
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -14,8 +15,7 @@ const Search = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    console.log(formData.get("search"));
+    router.push(`/search?keywords=${keywords}`)
     toggleSearch();
   };
   if (!mounted) {
@@ -27,19 +27,25 @@ const Search = () => {
     <div className={`search-popup ${openSearch ? " active" : ""}`}>
       <div
         onClick={toggleSearch}
-        className='search-popup__overlay search-toggler'
+        className="search-popup__overlay search-toggler"
       ></div>
 
-      <div className='search-popup__content'>
-        <form onSubmit={handleSearch} className='search-popup__form' action='#'>
-          <input type='text' id='search' placeholder='Search Here...' />
+      <div className="search-popup__content">
+        <form onSubmit={handleSearch} className="search-popup__form">
+          <input
+            onChange={(e) => setKeywords(e.target.value)}
+            value={keywords}
+            type="text"
+            id="search"
+            placeholder="Search Here..."
+          />
           <button
-            type='submit'
-            aria-label='search submit'
-            className='tolak-btn'
+            type="submit"
+            aria-label="search submit"
+            className="tolak-btn"
           >
             <b>
-              <i className='icon-magnifying-glass'></i>
+              <i className="icon-magnifying-glass"></i>
             </b>
             <span></span>
           </button>
