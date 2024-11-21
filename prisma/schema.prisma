@@ -68,6 +68,17 @@ model AllImage {
   homeImg    String? @db.VarChar(300)
 }
 
+model allProject {
+  id        Int     @id @default(autoincrement())
+  img       String? @db.VarChar(400)
+  proj_title String  @db.VarChar(100)
+  proj_des String  @db.VarChar(500)
+  live_link String  @db.VarChar(300)
+  createdAt DateTime   @default(now()) @db.Timestamp(0)
+  updatedAt DateTime   @default(now()) @updatedAt @db.Timestamp(0)
+
+}
+
 model comments {
   id           Int      @id @default(autoincrement())
   userID       Int

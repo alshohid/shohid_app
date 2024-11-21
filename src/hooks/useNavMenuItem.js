@@ -17,7 +17,7 @@ export const useNavItems = () => {
           subNavItems: category.subcategories.map((sub) => ({
             id: sub.id,
             name: sub.name,
-            href: `/category/${sub.id}`,
+            href: `/project/${sub.id}`,
           })),
         }));
 

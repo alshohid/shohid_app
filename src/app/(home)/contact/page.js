@@ -13,21 +13,10 @@ export const metadata = {
   description:
     "Tolak is a modern NextJS Template for Business, It Solution, Corporate, Agency, Portfolio shops. The template perfectly fits Beauty Spa, Salon, and Wellness Treatments websites and businesses.",
 };
-// async function getData() {
-//   const response = await fetch(
-//     `${process.env.NEXT_PUBLIC_HOST}/api/user/allBlog`,
-//     {
-//       method: "GET",
-//       cache: "no-store",
-//     }
-//   );
-//   const result = await response.json();
 
-//   return { allNewsBlog: result.data };
-// }
 
 const page = async () => {
-//   const data = await getData();
+
     return (
         <Layout>
         <TopBar />

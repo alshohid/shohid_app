@@ -17,7 +17,7 @@ const page = () => {
     <Layout>
       <TopBar/>
       <Header />
-      <PageHeader title="Our News" subTitle="News List Left Sidebar" />
+      <PageHeader blog={true} title="Our News" subTitle="News List Left Sidebar" />
       <BlogDetails/>
       <FooterThree />
     </Layout>

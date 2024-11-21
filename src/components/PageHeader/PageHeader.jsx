@@ -10,8 +10,8 @@ import Link from "next/link";
     return { allImage: blogImg.data };
   }
 
-const PageHeader = async({ title, subTitle }) => {
-  const data = await getData()
+const PageHeader = async ({ title, subTitle, blog }) => {
+  const data = await getData();
   return (
     <section className="page-header">
       <div
@@ -45,8 +45,7 @@ const PageHeader = async({ title, subTitle }) => {
               data-aos-delay="100"
             >
               <Image
-
-                src={data?.allImage[0]?.aboutImg}
+                src={blog ? data?.allImage[0]?.blogImg:data?.allImage[0]?.aboutImg}
                 width={600}
                 height={600}
                 alt="blog"

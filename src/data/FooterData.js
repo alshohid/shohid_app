@@ -110,7 +110,7 @@ const footerData = {
   widgetSocial,
   services: [
     { id: 1, href: "/about", title: "Why choose us" },
-    { id: 2, href: "/aservices", title: "Our Service" },
+    { id: 2, href: "/services", title: "Our Service" },
     { id: 3, href: "/reviews", title: "Partners" },
     { id: 4, href: "/contact", title: "Core values" },
     { id: 5, href: "/project", title: "Our projects" },
