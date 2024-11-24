@@ -16,7 +16,7 @@ const {
   text,
   title,
 } = contactTwoData;
-const inputs = ["name", "email", "message"];
+
 
 const ContactTwo = ({ contact }) => {
   const [mounted, setMounted] = useState(false);

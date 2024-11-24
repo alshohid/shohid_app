@@ -22,7 +22,7 @@ const page = async () => {
         <TopBar />
         <Header />
         <PageHeader title="Our Contact" subTitle="Contact" />
-        <ContactTwo contact="page" />;
+        {/* <ContactTwo contact="page" />; */}
         <MailTwo />
         <FooterThree />
         </Layout>
