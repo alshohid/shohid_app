@@ -16,7 +16,7 @@ export async function POST(req: Request, res: Response) {
     } else {
       const user = result[0];
       const token = await CreateToken(user.email, user.id);
-      const expirationDate = new Date(Date.now() + 24 * 60 * 60 * 1000); // 1 day expiration
+      const expirationDate = new Date(Date.now() + 24 * 60 * 60 * 1000);
       const cookieString = `token=${token}; expires=${expirationDate.toUTCString()}; Path=/`;
       return NextResponse.json(
         { status: "success", data: token },

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import FooterThree from "@/components/FooterThree/FooterThree";
 import Header from "@/components/Header/Header";
 import MailTwo from "@/components/MailTwo/MailTwo";
@@ -10,7 +10,7 @@ import BlogThreeGrid from "@/components/BlogThreeGrid/BlogThreeGrid";
 import TopBar from "@/components/TopBar/TopBar";
 import { useSearchParams } from "next/navigation";
 
-const Page = () => {
+const BlogPage = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -25,7 +25,7 @@ const Page = () => {
           { method: "GET", cache: "no-store" }
         );
         const result = await response.json();
-        setData(result.data);
+        setData(result?.data);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -35,9 +35,6 @@ const Page = () => {
 
     fetchData();
   }, [keywords]);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
 
   return (
     <Layout>
@@ -50,5 +47,11 @@ const Page = () => {
     </Layout>
   );
 };
+
+const Page = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <BlogPage />
+  </Suspense>
+);
 
 export default Page;

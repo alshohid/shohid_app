@@ -12,7 +12,7 @@ const BlogThreeGrid = ({ carouselData }) => {
     <section className="blog-three">
       <Container>
         <Row className="gutter-y-30">
-          {carouselData.length > 0 ? carouselData.map(
+          {carouselData?.length > 0 ? carouselData?.map(
             ({
               id,
               img1,
