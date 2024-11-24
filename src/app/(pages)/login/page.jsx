@@ -15,11 +15,15 @@ export const metadata = {
 const page = () => {
   return (
     <Layout>
-        <TopBar/>
-        <Header />
-        <PageHeader title="Our News" subTitle="News List Left Sidebar" />
-       <LoginPage/>
-        <FooterThree />
+      <TopBar />
+      <Header />
+      <PageHeader
+        title="Our News"
+        subTitle="News List Left Sidebar"
+        blog={false}
+      />
+      <LoginPage />
+      <FooterThree />
     </Layout>
   );
 };
