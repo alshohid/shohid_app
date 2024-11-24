@@ -26,7 +26,7 @@ const LoginPage = () => {
     );
 
     const result = await response.json();
-    if (response.ok && result.status === "success") {
+    if (response.ok && result?.status === "success") {
         router.push('/')
     } else {
         console.error("Registration failed:", result);
@@ -56,7 +56,7 @@ const LoginPage = () => {
                                         type="email"
                                         name="email"
                                         placeholder="Username or email *"
-                                        value={loginData.email}
+                                        value={loginData?.email}
                                         onChange={(e) => handleInputChange(e, 'login')}
                                     />
                                 </div>
@@ -65,7 +65,7 @@ const LoginPage = () => {
                                         type="password"
                                         name="password"
                                         placeholder="Password *"
-                                        value={loginData.password}
+                                        value={loginData?.password}
                                         onChange={(e) => handleInputChange(e, 'login')}
                                     />
                                 </div>
@@ -84,7 +84,6 @@ const LoginPage = () => {
                             </form>
                         </div>
                     </Col>
-                    
                 </Row>
             </Container>
         </section>
