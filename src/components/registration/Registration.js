@@ -12,39 +12,43 @@ const Registration = () => {
     mobile: "",
   });
 
-  const handleRegisterSubmit = async (event) => {
-    event.preventDefault();
-    const { email, password, firstName, lastName, mobile } = registerData;
+ const handleRegisterSubmit = async (event) => {
+  event.preventDefault();
+  const { email, password, firstName, lastName, mobile } = registerData;
 
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_HOST}/api/user/registration`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            password,
-            firstName,
-            lastName,
-            mobile,
-          }),
-        }
-      );
-
-      const result = await response.json();
-      if (response.ok && result.status === "success") {
-        router.push('/login')
-        console.log("Registration successful:", result);
-      } else {
-        console.error("Registration failed:", result);
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_HOST}/api/user/registration`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+          firstName,
+          lastName,
+          mobile,
+        }),
       }
-    } catch (error) {
-      console.error("Error during registration:", error);
+    );
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok.");
     }
-  };
+
+    const result = await response.json();
+    if (result?.status === "success") {
+      router.push('/login');
+      console.log("Registration successful:", result);
+    } else {
+      console.error("Registration failed:", result);
+    }
+  } catch (error) {
+    console.error("Error during registration:", error);
+  }
+};
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
