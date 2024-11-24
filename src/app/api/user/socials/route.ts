@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 
-export async function GET(req: Request, res: Response) {
+export async function GET(req: Request,) {
   try {
     const prisma = new PrismaClient();
     let result = await prisma.socials.findMany();

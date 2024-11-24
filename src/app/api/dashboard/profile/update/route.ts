@@ -2,10 +2,10 @@ import { PrismaClient } from "@prisma/client";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
-export async function PUT(req: Request, res: Response) {
+export async function PUT(req: Request,) {
     try {
         const reqBody = await req.json()
-        const headerList = headers();
+        const headerList =await headers();
         const userId = parseInt(headerList.get('id') as any)
         const prisma = new PrismaClient();
         let result = await prisma.users.update({

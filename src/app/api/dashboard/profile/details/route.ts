@@ -2,9 +2,9 @@ import { PrismaClient } from "@prisma/client";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
-export async function GET(req: Request, res: Response) {
+export async function GET(req: Request, ) {
     try {
-        const headerList = headers();
+        const headerList =await headers();
         const userId =  parseInt( headerList.get('id') as any)
         const prisma = new PrismaClient();
         let result = await prisma.users.findUnique({

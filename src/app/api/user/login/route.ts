@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 import { NextResponse } from "next/server";
 import { CreateToken } from "../../../../utill/jwtTokenhelper";
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request, ) {
   try {
     const reqBody = await req.json();
     const prisma = new PrismaClient();
@@ -28,7 +28,7 @@ export async function POST(req: Request, res: Response) {
   }
 }
 
-    export async function GET(req: Request, res: Response) {
+    export async function GET(req: Request, ) {
     const expirationDate = new Date(Date.now() - 24 * 60 * 60 * 1000);
     const response = NextResponse.redirect(new URL("/", req.url), 303);
     response.cookies.set("token", "", { expires: expirationDate });

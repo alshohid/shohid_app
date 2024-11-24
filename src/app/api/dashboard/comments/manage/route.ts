@@ -6,8 +6,8 @@ const prisma = new PrismaClient();
 
 export async function GET(req: Request) {
   try {
-    const headerlist = headers();
-    const user_Id = parseInt(headerlist.get("id") as any);
+    const headerlist =await headers();
+  const user_Id = parseInt(headerlist.get("id") || "0") as any;
 
     // Extract pagination parameters from the query string
     const { searchParams } = new URL(req.url);
@@ -35,9 +35,9 @@ export async function GET(req: Request) {
   }
 }
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request, ) {
   try {
-    const headerlist = headers();
+    const headerlist =await headers();
     const user_Id = parseInt(headerlist.get("id") as any);
     const reqBody = await req.json();
     reqBody.userID = user_Id;
@@ -59,9 +59,9 @@ export async function POST(req: Request, res: Response) {
   }
 }
 
-export async function DELETE(req: Request, res: Response) {
+export async function DELETE(req: Request,) {
   try {
-    const headerlist = headers();
+    const headerlist =await headers();
     const user_Id = parseInt(headerlist.get("id") as any);
     const reqBody = await req.json();
     const comment_id = reqBody.id;

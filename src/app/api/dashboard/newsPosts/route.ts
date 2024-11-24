@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request,) {
   try {
     const headerlist = headers();
     // const user_Id = parseInt(headerlist.get("id") as any);
