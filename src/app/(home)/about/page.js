@@ -20,9 +20,9 @@ const page = async () => {
       <TopBar />
       <Header />
       <PageHeader title="About" subTitle="About" />
-      <AboutThree/>
-      <MailTwo />
-      <FooterThree />
+      {/* <AboutThree/> */}
+      {/* <MailTwo />
+      <FooterThree /> */}
     </Layout>
   );
 };
