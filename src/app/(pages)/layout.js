@@ -66,10 +66,7 @@ export default function RootLayout({ children }) {
             : ""
         } ${themeState}`}
       >
-        {/* <ThemeSwitcherProvider themeMap={themes} defaultTheme={themeState}> */}
-
         <ThemeProvider>{children}</ThemeProvider>
-        {/* </ThemeSwitcherProvider> */}
       </body>
     </html>
   );
